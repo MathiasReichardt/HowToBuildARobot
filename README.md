@@ -10,9 +10,9 @@ So in this tutorial I will build a nice little REST API step by step.
 ### This will not be a **CRUD** API.
 
 ### Siren as hypermedia format, because Actions
-I will use the (Siren)[https://github.com/kevinswiber/siren] hypermedia format. It supports Actions which are very useful.
+I will use the [Siren](https://github.com/kevinswiber/siren) hypermedia format. It supports Actions which are very useful.
 
 ## Technical choices
 - C#
 - Asp.Net core
-- (Web API Hypermedia Extensions)[https://github.com/bluehands/WebApiHypermediaExtensions]
+- [Web API Hypermedia Extensions](https://github.com/bluehands/WebApiHypermediaExtensions)
