@@ -5,5 +5,16 @@
 
 .inner {
   max-width: 75%;
+  min-width: 650px;
   width: auto;
+}
+
+#main-content {
+  width: auto;
+  min-width: 650px;
+}
+
+.h1, .h2, .h3, h4, h5, h6 {
+  width: auto;
+  min-width: 650px;
 }
