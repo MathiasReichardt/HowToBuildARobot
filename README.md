@@ -20,8 +20,11 @@ This tutorial will aim for a different kind of API where we access the domain lo
 ### Siren as hypermedia format, because Actions
 I will use the [Siren](https://github.com/kevinswiber/siren) hypermedia format. It supports Actions which are very useful to access available domain operations. Also Siren is quite clear and straight forward.
 
+### ProblemJson because there will be errors
+It is very useful to have a fixed format for error reporting so clients will know what objects to expect if something goes wrong. See [RFC7807 - Problem Details for HTTP APIs](https://tools.ietf.org/html/rfc7807)
+
 ## Technical choices
-- C# Asp.Net core for the server implementation.
+- C# ASP.NET Core for the server implementation.
 - [Web API Hypermedia Extensions](https://github.com/bluehands/WebApiHypermediaExtensions) I am the maintainer of this project and it will do a lot of work for me. Basically it is a Siren formatter which also builds links so I don't have to.
 - Postman: super useful tool to talk to a HTTP API
 - [HypermediaUi](https://github.com/MathiasReichardt/HypermediaUi) I am also the maintainer of this project. It is a generic Siren browser and convenient during development.
