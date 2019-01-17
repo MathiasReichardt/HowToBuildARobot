@@ -6,6 +6,22 @@ To begin using an API we kneed to know where to find it. For that the API provid
 | The only URL your API clients need to know is the entry point URL. |
 
 ## Adding the entry point
+First we add a new controller which will be responsible to deliver the entry point document:
+
+EntryPoint.cs:
+```csharp
+[Route("api/[controller]")]
+[ApiController]
+public class EntryPoint : Controller
+{
+    [HttpGetHypermediaObject(typeof(EntryPointHto))]
+    public ActionResult GetEntryPoint()
+    {
+        return Ok(new EntryPointHto());
+    }
+}
+```
+
 
 ## How do I document my API
 This means we need an alternative way documenting our API. Commonly a documentation is a list of URLs with additional information like example JSONs, what HTTP method to use and maybe even when you are allowed to call that route. Doing so has several drawbacks:
