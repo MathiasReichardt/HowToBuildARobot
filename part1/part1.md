@@ -76,7 +76,7 @@ Calling our brand new API will return the EntryPoint document formatted as Siren
 }
 ```
 
-We notice that the formatter for `HypermediaObject` was able to create a proper Siren, complete with `class` and title. We also see the link generation feature in action. There is a link called `self` which points to our entry point. It is best practice for all Siren documents to contain a `self` link, so e.g. you are able to refresh a resource.
+We notice that the formatter for `HypermediaObject` was able to create a proper Siren, complete with `class` and `title`. We also see the link generation feature in action. There is a link called `self` which points to our entry point. It is best practice for all Siren documents to contain a `self` link, so e.g. you are able to refresh a resource.
 
 ## Conclusion
 We completed our entry point which we will extend in the following parts.
