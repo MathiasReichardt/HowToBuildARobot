@@ -1,4 +1,4 @@
-|[HOME](../README.md)|
+[HOME](../README.md)
 
 # Part 0: Setup
 

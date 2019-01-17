@@ -1,4 +1,4 @@
-|[HOME](../README.md)|[Part 1](../part1/part1.md)|
+[HOME](../README.md)   [Part 1](../part1/part1.md)
 
 # Part 2: Linking to another resource
 
