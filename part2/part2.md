@@ -1,3 +1,4 @@
+[HOME](README.md)
 # Part 2: Linking to another resource
 
 ## How do I document my API

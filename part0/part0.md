@@ -1,3 +1,4 @@
+[HOME](README.md)
 # Part 0: Setup
 
 We will need some basic setup to get things going. It is not the topic of this tutorial to explain how to use ASP.NET Core. For that please refer to other sources.
@@ -15,3 +16,5 @@ So all the initial setup can be seen in `Startup.cs`:
 - Add `HypermediaExtensions` for later use
 - Add a basic `GlobalExceptionFilter` so we ensure that all exceptions are formatted nicely as `ProblemJson`
 - Add a "404" response so if some route is accessed which does not exist we will provide a proper `ProblemJson`
+
+[Part 1: Enter the RoboPlant](part1/part1.md)
