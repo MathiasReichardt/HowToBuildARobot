@@ -34,3 +34,4 @@ It is very useful to have a fixed format for error reporting so clients will kno
 
 - [Part 0: Setup](part0/part0.md)
 - [Part 1: Enter the RoboPlant](part1/part1.md)
+- [Part 2: Linking to another resource](part2/part2.md)
