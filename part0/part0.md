@@ -1,4 +1,4 @@
-[HOME](../README.md)
+|[HOME](../README.md)|
 
 # Part 0: Setup
 
@@ -17,7 +17,5 @@ So all the initial setup can be seen in `Startup.cs`:
 - Add `HypermediaExtensions` for later use
 - Add a basic `GlobalExceptionFilter` so we ensure that all exceptions are formatted nicely as `ProblemJson`
 - Add a "404" response so if some route is accessed which does not exist we will provide a proper `ProblemJson`
-
-[HOME](../README.md)
 
 [NEXT Part 1: Enter the RoboPlant](../part1/part1.md)
