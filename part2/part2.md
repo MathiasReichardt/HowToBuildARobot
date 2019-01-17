@@ -1,4 +1,5 @@
-[HOME](README.md)
+[HOME](../README.md)
+[PREVIOUS Part 1: Enter the RoboPlant](../part1/part1.md)
 # Part 2: Linking to another resource
 
 ## How do I document my API
