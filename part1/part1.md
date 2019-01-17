@@ -1,4 +1,4 @@
-[HOME](../README.md)   [Part 0](part0/part0.md)   [Part 2](../part2/part2.md)|
+[HOME](../README.md)   [Part 0](part0/part0.md)   [Part 2](../part2/part2.md)
 
 # Part 1: Enter the RoboPlant
 To begin using an API we kneed to know where to find it. For that the API provides the **entry point URL**. When using the API we will start by requesting the entry point document and follow provided links to other areas of the API from there. If you can not navigate to some specific area it is not reachable for clients.
