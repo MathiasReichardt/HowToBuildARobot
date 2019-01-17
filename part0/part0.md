@@ -12,6 +12,6 @@ So all the initial setup can be seen in `Startup.cs`:
     - remove all default formatters because we want only to return JSON for now
     - add a tweaked JSON formatter which will not serialize `NULL` and `default` values to reduce the size of the JSON. This is better to read for us humans and will save some bandwidth.
 - generously allow CORS so we are able to use the generic `HypermediaUi` and basically allow other web clients to use the API.
-- Add `hypermediaExtensions` for later use
+- Add `HypermediaExtensions` for later use
 - Add a basic `GlobalExceptionFilter` so we ensure that all exceptions are formatted nicely as `ProblemJson`
 - Add a "404" response so if some route is accessed which does not exist we will provide a proper `ProblemJson`

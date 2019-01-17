@@ -28,6 +28,7 @@ It is very useful to have a fixed format for error reporting so clients will kno
 - [Web API Hypermedia Extensions](https://github.com/bluehands/WebApiHypermediaExtensions) I am the maintainer of this project and it will do a lot of work for me. Basically it is a Siren formatter which also builds links so I don't have to.
 - Postman: super useful tool to talk to a HTTP API
 - [HypermediaUi](https://github.com/MathiasReichardt/HypermediaUi) I am also the maintainer of this project. It is a generic Siren browser and convenient during development.
+- HTTP as the underling protocol, REST does not exclude other protocols at all.
 
 # Building a robot factory
 
