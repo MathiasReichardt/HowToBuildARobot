@@ -1,4 +1,4 @@
-[HOME](../README.md)   [Part 0](part0/part0.md)   [Part 2](../part2/part2.md)
+[HOME](../README.md)   [Part 0](../part0/part0.md)   [Part 2](../part2/part2.md)
 
 # Part 1: Enter the RoboPlant
 
