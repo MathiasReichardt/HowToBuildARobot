@@ -22,7 +22,7 @@ public class EntryPointHto : HypermediaObject
 
 Since we do not need any information of the `ProductionHto` to specify a link we can get away with just using a `HypermediaObjectKeyReference`. It tells the framework that it should build a link which will lead to a resource of type `ProductionHto`. So when the `EntryPointHto` is formatted the framework will look up if there is an attributed like `HttpGetHypermediaObject(typeof(ProductionHto))`.
 
-At the moment there is not. This will result in a message like:
+At the moment there is not. If we request the entry point of our API: `http://localhost:5000/api/entrypoint` this will result in a message like:
 `WebApi.HypermediaExtensions.Exceptions.RouteResolverException: Route to type 'ProductionHto' not found in RouteRegister.`
 
 To ease development a little we can activate a framework option in `Startup.cs`:
@@ -65,7 +65,7 @@ Now the formatter will generate a fake route for the relation `production`:
 
 This is not for production code of course.
 
-## Add in the production HTO
+## Add the production HTO
 
 To build a proper link we need to create a new controller and HTO for production.
 
@@ -118,13 +118,14 @@ If we request the `EntryPoint` again the framework is able to build a link:
 That's it, we linked to another, single resource.
 
 ## How do I document my API
+
 If the client only knows the entry point URL, how do we document the API? We need an alternative way. Commonly a documentation is a list of URLs with additional information like example JSONs, what HTTP method to use and maybe even when you are allowed to call that route. Doing so has several drawbacks:
 
 - The clients are hardcoding the URLs and methods, so if the API needs to change it there will be a breaking change: all clients must determine which URLs or methods have changed and adapt.
 
 - The clients need to figure out if it is allowed to use a certain URL (e.g. get a specific resource or create a new one). This is business logic and may also change over time. So this logic is part of the API. and if the API is not providing a specific link you are not allowed to use it (the API should respond with a error code 401 or 403).
 
-### API map 
+### API map
 
 One way to resolve this issue is using API maps to communicate the topology of an API. basically this is a graph where the entry point is the initial state. A client then moves along the edges, which represent the relations. So if a specific resource is to be accessed the client must choose a path to walk. An API map is pretty useful to talk about, it helps to understand how the API is designed.
 
