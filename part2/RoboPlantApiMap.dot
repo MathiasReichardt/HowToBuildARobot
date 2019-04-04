@@ -1,7 +1,7 @@
 ﻿/* no self links */
 
 Digraph {
-    graph [ dpi = 300 ];
+    graph [ dpi = 300 ]; 
     labelloc="t";
     labeljust=left;
     fontname="arial"
