@@ -25,6 +25,7 @@ Some conditions we enforce for our business logic might be not fulfilled and we 
 For programming errors we must fish in the dark. RoboPlant features a `GlobalExceptionFilter` which will produce a decent error response if an unhandled exception occurs.
 
 The expected cases of environmental errors and business logic violations tempt us in using (custom) exception. But if errors are first class citizens we should not resort to control flow by exception.
+
 Reasons:
 
 - Bad code readability
@@ -32,6 +33,6 @@ Reasons:
 - Abstractions: IRepository does not state anything about an implementation throwing a implementation specific exception (e.g. SqlException)
 - Bad extensibility: If using custom exceptions you need to find all places where this exception might be seen.
 
-### Return types
+### Result types
 
-One way to tackle this problem is using Result types. Borrowed from functional languages like F#.
+One way to tackle this problem is using Result types. A concept borrowed from functional languages like F#.

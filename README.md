@@ -29,7 +29,13 @@ It is very useful to have a fixed format for error reporting so clients will kno
 
 ### Clean Architecture and DDD
 
-The server application will be build following principles of Clean Architecture [The Clean Code Blog by Robert C. Martin](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) and Domain Driven Design. Both are very useful ideas and worth a lot of reading on their own.
+The server application will be build following principles of Clean Architecture and Domain Driven Design. Both are very useful ideas and worth a lot of reading on their own.
+
+Great reads:
+
+- [The Clean Code Blog by Robert C. Martin](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [Clean Architecture: Standing on the shoulders of giants](https://herbertograca.com/2017/09/28/clean-architecture-standing-on-the-shoulders-of-giants/)
+- [DDD, Hexagonal, Onion, Clean, CQRS, … How I put it all together](https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/)
 
 ## Technical choices
 
