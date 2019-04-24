@@ -93,7 +93,7 @@ It has a generic parameter `TResult` so it can be reused in our future repositor
 
 ### Application layer
 
-For the simple use case of accessing `Production` we just pass the result to the caller (the REST controller). Because the result class is located in the same layer as the repository interface we do not introduce a code dependency to the repository implementation, which would violate the [Dependency Rule](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)].
+For the simple use case of accessing `Production` we just pass the result to the caller (the REST controller). Because the result class is located in the same layer as the repository interface we do not introduce a code dependency to the repository implementation, which would violate the [Dependency Rule](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
 
 Of course the application layer should create a new result class if there is a new case to be handled or it is required add another abstraction.
 
@@ -113,13 +113,13 @@ public void Match(
             => this.TypeMatch(success, notReachable, error);
 ```
 
-The match function expects an `Action` for all derived result class cases with a typed input. The `Actions` are then passed to `TypeMatch` which basically contains a type switch case statement and calls the proper delegate. There are more implementations for `Match` so we can sumerize:
+The match function expects an `Action` for all derived result class cases with a typed input. The `Actions` are then passed to `TypeMatch` which basically contains a type switch case statement and calls the proper delegate. There are more implementations for `Match` so we can summarize:
 
 - `void Match(...)`: Call `Action` for all cases.
 - `TMatchResult Match<TMatchResult>(...)`: Call `Func` for all cases and return a common return type.
 - `Task<TMatchResult> Match<TMatchResult>(...)`: Call a `Func` for all cases and return a common return a `Task` with return type.
 
-#### Creating the response
+#### Creating the responses
 
 We now can use the match function to create responses for all cases. If for some reason the result class changes we get a nice compiler warning. Also we can rely on the properties of the concrete result classes. E.g. only the `GetAllResult.Success` class contains a `Result` property and we do not have to know which properties we can use.
 
@@ -136,6 +136,37 @@ public async Task<ActionResult> GetProductionLines()
 }
 ```
 
+## Problem JSON
 
+For all result cases we create a response. In case we need to communicate an error to the client it is very useful to stick to a format the client can rely on. [Problem JSON rfc7807](https://tools.ietf.org/html/rfc7807) provides such a format using the media type `application/problem+json`.
 
+### Example Problem JSON
 
+Here is an example of a Problem JSON:
+
+```json
+{
+    "type": "RoboPlant.InternalError",
+    "title": "Sorry, something went wrong.",
+    "status": 500,
+    "detail": "Something went wrong in the repository."
+}
+```
+
+This schema already holds much information. A brief excerpt from the RFC:
+
+- `type` (string): A URI reference [RFC3986] that identifies the problem type.
+- `title` (string): A short, human-readable summary of the problem type.
+- `status` (number): The HTTP status code.
+- `detail` (string): A human-readable explanation specific to this occurrence of the problem.
+
+This is a very basic Problem JSON but it already contains (internationalizable) human-readable information and a machine-readable `type` which allows clients to react to specified errors if needed. Is is far better than just a HTTP error code.
+
+#### Possible improvement
+
+There is room for improvement for this basic Problem JSON which is not covered here:
+
+- Internationalization
+- `type` can be a resource leading to a detailed help (site).
+- The `instance` property specified in the RFC can be used to reference a resource specific for the occurred error, which allows for great detail.
+- Adding problem specific properties
