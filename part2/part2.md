@@ -134,3 +134,5 @@ One way to resolve this issue is using API maps to communicate the topology of a
 Our current API only features two resources `EntryPoint` and `Prodcution`. Note that we use the class of the resource as label, not the C# class name, because that's an internal concern. The edge is labeled with the relation `production` used in the origin class `EntryPoint`
 
 ![API map](RoboPlantApiMap.png)
+
+[Part 3: Communicating Errors](../part3/part3.md)
