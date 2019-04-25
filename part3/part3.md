@@ -99,7 +99,7 @@ Of course the application layer should create a new result class if there is a n
 
 ### Handling the result cases
 
-Finally our REST controller receives a result base class `GetAllResult<ICollection<ProductionLine>>.Success(resultList)`.
+Finally our REST controller receives a result of type `GetAllResult<ICollection<ProductionLine>>`.
 
 #### The Match function for result class
 
